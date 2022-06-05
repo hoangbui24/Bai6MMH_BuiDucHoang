@@ -42,7 +42,11 @@ int main(int argc, char* argv[])
     //size = std::min(signature.size(), (size_t)30);
     StringSource(toBeSigned, toBeSigned.size(), true, new HexEncoder(new FileSink(std::cout)));
     //std::cout << "..." << std::endl;
-
+    
+    //Output some infos of certificate
+    std::cout << "\nDumping identities:" << std::endl;
+    std::cout << cert.GetSubjectIdentities() << std::endl;
+    
     return 0;
 }
 
